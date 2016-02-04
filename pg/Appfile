@@ -4,7 +4,6 @@ application {
 }
 
 customization {
-    image = "postgres:9.1.0"
+    image = "postgres:9.5.0"
     run_args = "-p 5432:5432"
 }
-
