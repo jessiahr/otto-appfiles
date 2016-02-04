@@ -1,0 +1,10 @@
+application {
+    name = "kf_otto_db"
+    type = "docker-external"
+}
+
+customization {
+    image = "postgres:9.1.0"
+    run_args = "-p 5432:5432"
+}
+
