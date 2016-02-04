@@ -1,0 +1,89 @@
+{
+    "File": {
+        "ID": "13091649-196e-9aac-28fc-20e53098cd2c",
+        "Path": "/Users/jessiahr/Code Shelf/otto-appfiles/pg/Appfile",
+        "Source": "",
+        "Application": {
+            "Name": "kf_otto_db",
+            "Type": "docker-external",
+            "Detect": true,
+            "Dependencies": null
+        },
+        "Project": {
+            "Name": "pg",
+            "Infrastructure": "pg"
+        },
+        "Infrastructure": [
+            {
+                "Name": "pg",
+                "Type": "aws",
+                "Flavor": "simple",
+                "Foundations": [
+                    {
+                        "Name": "consul",
+                        "Config": null
+                    }
+                ]
+            }
+        ],
+        "Customization": {
+            "Raw": [
+                {
+                    "Type": "app",
+                    "Config": {
+                        "image": "postgres:9.1.0",
+                        "run_args": "-p 5432:5432"
+                    }
+                }
+            ]
+        },
+        "Imports": null
+    },
+    "Vertices": [
+        {
+            "File": {
+                "ID": "13091649-196e-9aac-28fc-20e53098cd2c",
+                "Path": "/Users/jessiahr/Code Shelf/otto-appfiles/pg/Appfile",
+                "Source": "",
+                "Application": {
+                    "Name": "kf_otto_db",
+                    "Type": "docker-external",
+                    "Detect": true,
+                    "Dependencies": null
+                },
+                "Project": {
+                    "Name": "pg",
+                    "Infrastructure": "pg"
+                },
+                "Infrastructure": [
+                    {
+                        "Name": "pg",
+                        "Type": "aws",
+                        "Flavor": "simple",
+                        "Foundations": [
+                            {
+                                "Name": "consul",
+                                "Config": null
+                            }
+                        ]
+                    }
+                ],
+                "Customization": {
+                    "Raw": [
+                        {
+                            "Type": "app",
+                            "Config": {
+                                "image": "postgres:9.1.0",
+                                "run_args": "-p 5432:5432"
+                            }
+                        }
+                    ]
+                },
+                "Imports": null
+            },
+            "Dir": "",
+            "NameValue": "kf_otto_db"
+        }
+    ],
+    "Edges": []
+}

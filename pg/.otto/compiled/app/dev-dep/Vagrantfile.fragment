@@ -1,0 +1,23 @@
+$preshell = <<SCRIPT
+if command -v apt-get >/dev/null 2>&1; then
+    export DEBIAN_FRONTEND=noninteractive
+    sudo apt-get update >/dev/null 2>&1
+    sudo apt-get install -y apt-transport-https >/dev/null 2>&1
+fi
+SCRIPT
+
+config.vm.provision "shell", inline: $preshell
+config.vm.provision "docker" do |d|
+  d.run "kf_otto_db", args: "-p 5432:5432", image: "postgres:9.1.0"
+end
+
+# Sync our own dep folder in there
+config.vm.synced_folder '/Users/jessiahr/Code Shelf/otto-appfiles/pg', "/otto-deps/kf_otto_db-13091649-196e-9aac-28fc-20e53098cd2c"
+
+# Foundation configuration for dev dep
+
+dir = "/otto/foundation-kf_otto_db-1"
+config.vm.synced_folder '/Users/jessiahr/Code Shelf/otto-appfiles/pg/.otto/compiled/app/foundation-consul/app-dev-dep', dir
+config.vm.provision "shell", inline: "cd #{dir} && bash #{dir}/main.sh"
+
+

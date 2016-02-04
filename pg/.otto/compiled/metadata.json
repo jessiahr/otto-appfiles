@@ -1,0 +1,1 @@
+{"app":{"version":1,"foundation_config":{"ServiceName":"kf_otto_db","ServicePort":0,"ServiceTags":null},"dev_dep_fragment_path":"/Users/jessiahr/Code Shelf/otto-appfiles/pg/.otto/compiled/app/dev-dep/Vagrantfile.fragment","foundation_results":null},"app_deps":{},"infra":null,"foundations":{"consul":null}}
